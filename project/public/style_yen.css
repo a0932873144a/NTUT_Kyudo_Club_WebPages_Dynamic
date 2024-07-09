@@ -1,0 +1,461 @@
+* {
+    font-family: '標楷體', BiauKai, serif;
+}
+
+body {
+    font-family: '標楷體', BiauKai, serif;
+
+    background-color: #dadada; /* 設定整頁背景顏色 */
+}
+
+
+
+header {
+    background-color: #fcfcfc;
+    height: 100px;
+    width: 100%;
+    position: fixed; /* Changed from relative to fixed */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    z-index: 1000; /* Ensure it's above other content */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: adds shadow for depth */
+}
+
+.header_members{
+
+    line-height: 80px;
+    margin-top: 15px;
+
+}
+
+h1 {
+    color: #2828ff;
+    position: absolute;
+    left: 120px;
+    top: 30%; /* Set top to 50% of the parent element's height */
+    transform: translateY(-50%); /* This will pull the element up by half its own height, centering it vertically */
+    line-height: 1; /* If the icon is not text, the line-height can be 1 */
+    background-image: url(image/HomePageNtutKc.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 210px; /* You might want to adjust this depending on the actual size of your icon */
+    height: 80px; /* Set the height to match the header's height if necessary */
+    text-indent: -9999px; /* Hide the text off-screen */
+}
+
+
+header ul {
+    position: absolute;
+    right: 5vw;
+    top: 0;
+    line-height: 80px;
+}
+
+header li {
+    display: inline;
+    margin-right: 4vw;
+}
+
+header a {
+    font-size: 18px;
+    color: #8e8e8e; /* Light gray color for non-active links */
+    text-decoration: none;
+    position: relative; /* Needed for positioning the pseudo-element */
+    transition: color 0.3s; /* Smooth transition for color changes */
+}
+
+header a:not(.active):hover,
+header a:not(.active):focus {
+    color: black; /* Text color changes to black on hover/focus */
+}
+
+
+header a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: rgb(66, 66, 74);
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -10px; /* Distance from the text */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+header a:hover::after,
+header a:focus::after {
+    width: 100%; /* Full width on hover/focus */
+}
+
+main {
+    padding-top: 110px; /* Same as the height of the header */
+}
+
+/*begining*/
+
+.image-container {
+    display: flex; /* 使用 flex 布局 */
+    /*z-index: 1;*/
+}
+
+.image-container li + li img {
+    margin-right: 10px; /* 圖片之間的間距，你可以根據需要調整 */
+}
+
+.pic{
+    width:100%;
+    height:auto;
+    overflow: hidden;
+    background: #000000;
+    border-radius: 50%;
+    min-width: 100%; /* 保證圖片最小寬度為容器寬度 */
+}
+.pic img{
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+}
+.c-grid2 { display: flex; flex-wrap: wrap; margin-right: -1rem; margin-top: -1rem; }
+.c-grid2--center { justify-content: center; }
+.c-grid2--2l { margin-right: -1.5rem; margin-top: -1.5rem; }
+.p-member-list a { color: inherit; text-decoration: none; }
+
+.member-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 可以根據需要調整對齊方式 */
+}
+
+.c-badge {     
+    display: inline-block;
+    text-align: center; vertical-align: 1px; box-sizing: border-box; line-height: 1; font-size: 0.75em; font-weight: bold; border: 1px solid transparent; padding: 0.35em 0.5em 0.25em;
+    margin-top: 5%; /* 調整上邊距，根據需要調整具體數值 */
+}
+.c-badge--member { background-color: #4d4db3; color: #ffffff; display: inline;}
+
+/*over*/
+
+
+
+
+.mains{
+    background-color: antiquewhite;
+    color: white;
+    height: 85vh;
+    background-image: 
+        linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)), url("image/HomePageMain.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.slogan{
+    background-color: #272727;
+    color: white;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    line-height: 1.8em;
+}
+
+
+.slogan cite {
+    display: block; /* Block display to put on new line */
+    text-align: right; /* Align the text to the right */
+    margin-top: 5em; /* Add some space above the author's name */
+    font-size: 20px; /* Adjust size as needed */
+    font-style: normal; /* Normally cite is italic, setting to normal */
+}
+
+.greeting {
+    max-width: 1500px; /* 控制最大寬度 */
+    margin: 0 auto; /* 上下為0，左右自動（居中） */
+    padding: 0 50px; /* 左右兩側留出空白 */
+    text-align: center; /* 文本居中 */
+}
+
+.greeting h3 {
+    font-size: 40px;
+    margin: 0; /* 移除默認的外邊距 */
+    padding: 10px 0; /* 添加一些間隔 */
+    margin-top: 50px;
+}
+
+.greeting hr {
+    margin: 20px auto; /* 上下邊距和自動水平邊距（居中） */
+    width: 50%; /* 分隔線寬度為容器寬度的50% */
+}
+
+.greeting p {
+    margin: 0; /* 移除默認的外邊距 */
+    padding-bottom: 60px; /* 底部添加一些間隔 */
+}
+
+
+footer{
+    background-color: #000000;
+    color: #b7b7b7;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+.menu{
+    display: none;
+}
+
+.footer-extra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #697d83; 
+    /* background-color: #000000; */
+    color: #fff; /* 文字顏色設為白色 */
+    font-size: 0.9rem; /* 設定整個區塊的文字大小 */
+    z-index: 0;
+
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    padding-left: 20px; /* 增加左邊距 */
+    padding-right: 20px; /* 增加右邊距 */
+}
+
+.footer-left img {
+    width: auto;
+    height: 50px; /* Adjust height as needed */
+    margin-right: 10px;
+}
+
+.contact-info p {
+    margin: 0; 
+    margin-bottom: 5px; 
+    margin-left: 0px;
+    font-size: 0.9rem; 
+    line-height: 0.3;
+  
+}
+
+.fa-instagram, .fa-facebook {
+    font-size: 38px;
+    color: white;
+}
+
+.footer-right a {
+    margin-right: 40px;
+    text-decoration: none;
+}
+
+.menu{
+    display: none;
+}
+
+
+/* 1221 .css_update_draft */
+/* 為關於頁面的所有文字內容添加 Flexbox 屬性 */
+main h2{
+    font-size: 270%;
+    font-weight: 600;
+    background-image: linear-gradient(to left, #323232, #aba8a8);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-align: center;
+}
+
+main h3{
+    font-size: 220%;
+    font-weight: 600;
+    background-image: linear-gradient(to left, #002c62, #c0e3ff);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-align: center;
+}
+
+main p{
+    display: flex;
+    margin: 20px 80px 60px 80px;
+    line-height: 2; /* 調整行高 */
+    text-align: left; /* 文本居中 */
+    font-size: 1.3rem;
+}
+
+/* 修改 image-container 的 Flexbox 屬性 */
+.image-container {
+    display: flex;
+    flex-wrap: wrap; /* 允許元素換行 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    
+}
+
+/* 修改單個圖片的樣式 */
+.image-container li {
+    flex: 0 0 25%; /* 每個項目佔據 25% 的寬度，四張圖片一行 */
+    display: flex;
+    justify-content: center; /* 圖片在其容器中水平居中 */
+    align-items: center; /* 圖片在其容器中垂直居中 */
+    margin: 0px; /* 添加一些間隔 */
+}
+
+/* 圖片自身的樣式 */
+.image-container img {
+    width: 100%; /* 圖片寬度充滿其容器 */
+    height: auto; /* 高度自動，保持原始比例 */
+    max-width: 200px; /* 限制圖片最大寬度，根據需要調整 */
+}
+
+/* 修改知識連結部分的CSS */
+.knowledge-title h2 {
+    text-align: center; /* 標題居中 */
+    margin-bottom: 20px; /* 與下面按鈕的間隔 */
+}
+
+/* 按鈕部分的CSS */
+.knowledge-links {
+    display: flex;
+    justify-content: center; /* 按鈕水平居中 */
+    flex-wrap: wrap; /* 允許換行 */
+    gap: 10px; /* 元素間的間隙 */
+}
+
+.knowledge-links a {
+    background-color: #f5f5f5;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin-bottom: 40px;
+}
+
+.knowledge-links a:hover {
+    background-color: #ddd;
+}
+
+/* history */
+/* 專門針對歷史頁面的類別 */
+.text-center-history {
+    text-align: center;
+}
+
+.text-right-history {
+    text-align: right;
+}
+
+.center-image-history {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%; /* 確保圖片不超過其容器的寬度 */
+}
+
+/* image-container-history 內的圖片居中 */
+.image-container-history li {
+    flex: 0 0 50%; /* 在較大屏幕上，每個項目佔 50% 寬度 */
+    display: flex;
+    justify-content: center; /* 圖片在其容器中水平居中 */
+    align-items: center; /* 圖片在其容器中垂直居中 */
+    margin: 10px; /* 添加一些間隔 */
+}
+
+.image-container-history img {
+    max-width: 100%; /* 圖片寬度充滿其容器 */
+    height: auto; /* 高度自動，保持原始比例 */
+}
+
+/* 響應式設計*/
+@media screen and (max-width: 768px){
+    header ul {
+        display: none; /* 預設為隱藏 */
+        position: absolute;
+        background-color: #fcfcfc;
+        width: 100%;
+        top: 100px; /* 設定於 header 下方 */
+        left: 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* 選單陰影 */
+    }
+
+    header ul li {
+        display: block; /* 在手機版面上以塊狀顯示 */
+        margin-right: 0; /* 移除右邊距 */
+    }
+
+    header ul li a {
+        display: block; /* 完整覆蓋區域 */
+        padding: 10px 20px; /* 增加點擊區域 */
+        text-align: center; /* 文字水平置中 */
+        margin-left: -80px; /* 向左移動文字 */
+    }
+
+    header h1 {
+        left: 50%;
+        top: 30%; /* 調整以垂直居中 */
+        transform: translateX(-50%) translateY(-50%);
+        width: 10; /* 根據需要調整 */
+    }
+    .mains h2 {
+        font-size: 40px;
+    }
+
+    .menu {
+        display: block;
+        background-color: transparent;
+        color: black;
+        font-size: 35px;
+        position: absolute;
+        top: 24px;
+        left: 20px;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* 調整 slogan 區塊以適應較小螢幕 */
+    .slogan {
+        font-size: 15px; /* 引用的文字大小 */
+        padding: 10px; /* 增加內間距 */
+    }
+
+    .slogan cite {
+        font-size: 10px; /* 使作者的文字比引用的文字小 */
+        margin-top: 5px; /* 調整作者名稱與引用之間的間距 */
+    }
+
+    .image-container li {
+        flex: 0 0 50%; /* 在較小屏幕上，每個項目佔 50% 寬度 */
+    }
+
+    .knowledge-links {
+        flex-direction: row; /* 保持水平排列 */
+        justify-content: center; /* 保持居中對齊 */
+        flex-wrap: wrap; /* 允許換行，以防按鈕太多 */
+    }
+
+    .knowledge-links a {
+        padding: 5px 10px; /* 減少內邊距，使按鈕較小 */
+        font-size: 14px; /* 縮小字體大小 */
+    }
+
+    .image-container-history li {
+        flex: 0 0 100%; /* 在較小屏幕上，每個項目佔滿整行 */
+    }
+
+}
+
